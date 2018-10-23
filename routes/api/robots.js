@@ -6,11 +6,10 @@ const Robot = require('../../models/Robot')
 // @route GET api/robots/:id
 // @desc GET a single Robot by ID
 // @access Public
-router.get('/:id', function(req, res) {
-    Robot.findById(req.params.id,  (err, robot) => {
-        if (err) res.status(404).json({success: false});
-        else res.json({robot});
-    });
+router.get('/:id', (req, res) => {
+    Robot.findById(req.params.id)
+    .then(robot => res.json(robot))
+    .catch(err => res.status(404).json(err))
   });
   
 // @route GET api/robots
@@ -47,18 +46,17 @@ router.delete('/:id', (req, res) => {
     Robot.findById(req.params.id)
       .then(robot => robot.remove()
       .then(() => res.json({ success: true })))
-      .catch(err => res.status(404).json({ success: false }));
+      .catch(err => res.status(404).json(err));
   });
 
 // @route UPDATE api/robots/:id
 // @desc Update/Edit a Robot
 // @access Public
-router.put('/:id', function(req, res) {
-    Robot.findByIdAndUpdate(req.params.id, req.body, (err, post) => {
-      if (err) res.status(404).json({success: false});
-      else res.json({success: true});
-    });
-  });
+router.put('/:id', (req,res) => {
+    Robot.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => res.json({success: true}))
+    .catch(err => res.status(404).json(err))
+})
 
 
 module.exports = router
