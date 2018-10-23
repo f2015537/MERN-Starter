@@ -8,4 +8,4 @@
  5) Run `npm run server` to run backend with nodemon.
  6) Run `npm start` to run backend with node.
  7) Run `npm run client` to run frontend(react).
- 8) Run `rm -rf .git` and then run `git init` to start adding your own changes. (And get rid of my muddy git history lol :P)
+ 8) Run `rm -rf .git` and then run `git init` to start adding your own changes. (And get rid of my muddy commit history lol :P)
