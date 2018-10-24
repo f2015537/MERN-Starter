@@ -1,4 +1,4 @@
-### MERN_Starter Pack Loaded with CRUD Operations
+### MERN_Starter Pack Loaded with CRUD Operations(tested with POSTMAN)
  Ready to use starter pack for full stack MERN Apps.
  1) Clone repo
  2) Run `npm install` to install backend dependencies.
